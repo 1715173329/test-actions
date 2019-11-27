@@ -32,9 +32,9 @@ jobs:
       run: |
         mkdir -p /home/runner/df_logs
         free -h | tee /home/runner/df_logs/mem
-        df -h | tee/home/runner/df_logs/disk
+        df -h | tee /home/runner/df_logs/disk
     - name: Upload Artifacts
       uses: actions/upload-artifact@master
       with:
         name: result
-        path: /home/runner/logs
+        path: /home/runner/df_logs
