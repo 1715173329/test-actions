@@ -1,4 +1,4 @@
-name: Test
+name: Build-OpenWrt
 
 on:
   push:
@@ -11,7 +11,7 @@ on:
 
 jobs:
   build:
-    runs-on: ubuntu-18.04
+    runs-on: ubuntu-latest
     
     steps:
     - name: Clone Repository
@@ -28,8 +28,9 @@ jobs:
         sudo -E apt-get autoremove -y --purge
         sudo -E apt-get clean -y
         sudo -E rm -rf /usr/share/dotnet /etc/mysql /etc/php
-    - name: Check disks
+    - name: Check INFO
       run: |
+<<<<<<< HEAD
         mkdir -p /home/runner/df_logs
         free -h | tee /home/runner/df_logs/mem
         df -h | tee /home/runner/df_logs/disk
@@ -38,3 +39,10 @@ jobs:
       with:
         name: result
         path: /home/runner/df_logs
+=======
+        gcc -v
+        g++ -v
+        c++ -v
+        df -h
+        free -h
+>>>>>>> 678db74... test
