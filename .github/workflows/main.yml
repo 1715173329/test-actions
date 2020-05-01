@@ -23,7 +23,7 @@ jobs:
       uses: actions/checkout@v2
 
 
-    - name: Print Info
+    - name: Print Info ${{ github.event.client_payload.repo }}
       run: |
         echo -e ${GITHUB_WORKSPACE}
         echo -e "${{ toJson(github) }}"
