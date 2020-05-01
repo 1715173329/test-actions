@@ -27,5 +27,5 @@ jobs:
       run: |
         echo -e ${GITHUB_WORKSPACE}
         echo -e ${{ github.event }}
-        echo -e ${GITHUB_CONTEXT}
+        echo -e ${{ toJson(github) }}
         echo -e ${{ github.event.client_payload.repo }}
