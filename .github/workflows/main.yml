@@ -26,4 +26,6 @@ jobs:
     - name: Print Info
       run: |
         echo -e ${GITHUB_WORKSPACE}
+        echo -e ${{ github.event }}
+        echo -e ${GITHUB_CONTEXT}
         echo -e ${{ github.event.client_payload.repo }}
