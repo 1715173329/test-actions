@@ -26,5 +26,4 @@ jobs:
     - name: Print Info
       run: |
         echo -e ${GITHUB_WORKSPACE}
-        echo -e ${repo}
-        echo -e ${{ env.repo }}
+        echo -e ${{ github.event.client_payload.run_workflows.repo }}
