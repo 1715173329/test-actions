@@ -22,18 +22,9 @@ jobs:
     - name: Clone Repository
       uses: actions/checkout@v2
 
-    - name: Init build dependencies
-      env:
-        DEBIAN_FRONTEND: noninteractive
-      run: |
-        sudo -E apt-get -qq update
-        sudo -E apt-get -qq install gcc-8 gcc++-8 gcc-8-multilib g++-8-multilib 
-        for i in $(ls /usr/bin/*-8); do sudo -E ln -sf $i ${i%%-8*}; done 
 
     - name: Print Info
       run: |
         echo -e ${GITHUB_WORKSPACE}
-        gcc -v
-        g++ -v
-        df -h
-        free -h
+        echo -e ${repo}
+        echo -e ${{ env.repo }}
