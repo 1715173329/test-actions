@@ -31,6 +31,8 @@ jobs:
 
     - name: Print Info
       run: |
-        echo -e ${{ env.GITHUB_WORKSPACE }}
+        echo -e ${GITHUB_WORKSPACE}
+        gcc -v
+        g++ -v
         df -h
         free -h
