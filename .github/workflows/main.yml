@@ -23,5 +23,8 @@ jobs:
     - name: Clone Repository
       uses: actions/checkout@v2
 
+    - name: NMSL
+      run: apt update
+
     - name: SSH connection to Actions
       uses: csexton/debugger-action@master
