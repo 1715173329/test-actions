@@ -2,6 +2,7 @@ name: Build-OpenWrt
 
 on:
   repository_dispatch:
+  workflow_dispatch:
 #  push:
 #    branches: 
 #      - master
@@ -22,9 +23,5 @@ jobs:
     - name: Clone Repository
       uses: actions/checkout@v2
 
-
-    - name: Print Info ${{ github.event.client_payload.repo }}
-      run: |
-        echo -e ${GITHUB_WORKSPACE}
-        echo -e "${{ toJson(github) }}"
-        echo -e "${{ github.event.client_payload.repo }}"
+    - name: SSH connection to Actions
+      uses: csexton/debugger-action@master
