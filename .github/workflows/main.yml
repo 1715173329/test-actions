@@ -24,7 +24,7 @@ jobs:
       uses: actions/checkout@v2
 
     - name: NMSL
-      run: apt update
+      run: sleep 10s
 
     - name: SSH connection to Actions
       uses: csexton/debugger-action@master
