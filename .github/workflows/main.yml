@@ -23,8 +23,7 @@ jobs:
     - name: Clone Repository
       uses: actions/checkout@v2
 
-    - name: NMSL
-      run: sleep 30s
-
-    - name: SSH connection to Actions
-      uses: csexton/debugger-action@master
+    - name: Setup Debug Session
+      env:
+        TMATE_ENCRYPT_PASSWORD: 123456
+      uses: tete1030/safe-debugger-action@master
